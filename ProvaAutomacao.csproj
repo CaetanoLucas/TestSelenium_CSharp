@@ -104,7 +104,6 @@
     <Compile Include="Pages\Pagamento.cs" />
     <Compile Include="Pages\Pesquisa.cs" />
     <Compile Include="Pages\VerificarOrdem.cs" />
-    <Compile Include="Steps\ConsultarRoupaSteps.cs" />
     <Compile Include="Steps\RealizarCompra_Steps.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
