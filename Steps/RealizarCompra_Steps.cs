@@ -16,6 +16,7 @@ namespace ProvaAutomacao.Steps
         AddProdutoCarrinho addProduto;
         AguardarElementos aguardar;
         FazerLogin fazerLogin;
+        ConfirmarEndereco confirmarEndereco;
 
         [Given(@"que eu acesse o site my store")]
         public void DadoQueEuAcesseOSiteMyStore()
@@ -26,6 +27,7 @@ namespace ProvaAutomacao.Steps
             addProduto = new AddProdutoCarrinho(driver);
             aguardar = new AguardarElementos();
             fazerLogin = new FazerLogin(driver);
+            confirmarEndereco = new ConfirmarEndereco(driver);
 
             home.acessarSite(url);
         }
@@ -55,11 +57,13 @@ namespace ProvaAutomacao.Steps
             fazerLogin.realizarLogin();
         }
 
-        //[When(@"confirmar o endereço")]
-        //public void QuandoConfirmarOEndereco()
-        //{
-        //    ScenarioContext.Current.Pending();
-        //}
+        [When(@"confirmar o endereço")]
+        public void QuandoConfirmarOEndereco()
+        {
+            confirmarEndereco.verificarCarrinho();
+            confirmarEndereco.verificarItensESeguir();
+            confirmarEndereco.verificarEnderecoESeguir();
+        }
 
         //[When(@"aceitar os termos")]
         //public void QuandoAceitarOsTermos()

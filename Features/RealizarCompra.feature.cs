@@ -113,6 +113,9 @@ testRunner.And("adicionar este produto no carrinho", ((string)(null)), ((TechTal
 #line 11
 testRunner.And("efetuar login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line hidden
+#line 12
+testRunner.And("confirmar o endereço", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

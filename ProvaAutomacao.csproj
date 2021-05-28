@@ -97,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\AddProdutoCarrinho.cs" />
+    <Compile Include="Pages\ConfirmarEndereco.cs" />
     <Compile Include="Pages\FazerLogin.cs" />
     <Compile Include="Pages\Home.cs" />
     <Compile Include="Pages\Pesquisa.cs" />
