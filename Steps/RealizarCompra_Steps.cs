@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using ProvaAutomacao.Pages;
 using ProvaAutomacao.Util;
 using System;
@@ -17,6 +18,9 @@ namespace ProvaAutomacao.Steps
         AguardarElementos aguardar;
         FazerLogin fazerLogin;
         ConfirmarEndereco confirmarEndereco;
+        AceitarTermos aceitarTermos;
+        Pagamento pagamento;
+        VerificarOrdem verificarOrdem;
 
         [Given(@"que eu acesse o site my store")]
         public void DadoQueEuAcesseOSiteMyStore()
@@ -28,6 +32,9 @@ namespace ProvaAutomacao.Steps
             aguardar = new AguardarElementos();
             fazerLogin = new FazerLogin(driver);
             confirmarEndereco = new ConfirmarEndereco(driver);
+            aceitarTermos = new AceitarTermos(driver);
+            pagamento = new Pagamento(driver);
+            verificarOrdem = new VerificarOrdem(driver);
 
             home.acessarSite(url);
         }
@@ -65,22 +72,32 @@ namespace ProvaAutomacao.Steps
             confirmarEndereco.verificarEnderecoESeguir();
         }
 
-        //[When(@"aceitar os termos")]
-        //public void QuandoAceitarOsTermos()
-        //{
-        //    ScenarioContext.Current.Pending();
-        //}
+        [When(@"aceitar os termos")]
+        public void QuandoAceitarOsTermos()
+        {
+            aceitarTermos.aceitarTermos();
+            aceitarTermos.seguirParaPagamento();
+        }
 
-        //[When(@"escolher a forma de pagamento")]
-        //public void QuandoEscolherAFormaDePagamento()
-        //{
-        //    ScenarioContext.Current.Pending();
-        //}
+        [When(@"escolher a forma de pagamento")]
+        public void QuandoEscolherAFormaDePagamento()
+        {
+            pagamento.selecionarPagamento();
+            pagamento.gerarOrdem();
+        }
 
-        //[Then(@"o site retorna a ordem completa")]
-        //public void EntaoOSiteRetornaAOrdemCompleta()
-        //{
-        //    ScenarioContext.Current.Pending();
-        //}
+        [Then(@"o site retorna a ordem completa")]
+        public void EntaoOSiteRetornaAOrdemCompleta()
+        {
+            bool ordemGerada = false;
+
+            if (aguardar.AguardarElementoVisivel(verificarOrdem.ordemGerada(), driver))
+            {
+                ordemGerada = true;
+            }
+            Assert.IsTrue(ordemGerada);
+            
+            ManterDriver.FinalizarDriver(driver);
+        }
     }
 }

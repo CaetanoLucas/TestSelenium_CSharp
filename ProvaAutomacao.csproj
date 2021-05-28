@@ -96,11 +96,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\AceitarTermos.cs" />
     <Compile Include="Pages\AddProdutoCarrinho.cs" />
     <Compile Include="Pages\ConfirmarEndereco.cs" />
     <Compile Include="Pages\FazerLogin.cs" />
     <Compile Include="Pages\Home.cs" />
+    <Compile Include="Pages\Pagamento.cs" />
     <Compile Include="Pages\Pesquisa.cs" />
+    <Compile Include="Pages\VerificarOrdem.cs" />
     <Compile Include="Steps\ConsultarRoupaSteps.cs" />
     <Compile Include="Steps\RealizarCompra_Steps.cs" />
     <Compile Include="UserControl1.cs">

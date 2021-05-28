@@ -116,6 +116,15 @@ testRunner.And("efetuar login", ((string)(null)), ((TechTalk.SpecFlow.Table)(nul
 #line 12
 testRunner.And("confirmar o endereço", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line hidden
+#line 13
+testRunner.And("aceitar os termos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
+#line 14
+testRunner.And("escolher a forma de pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
+#line 15
+testRunner.Then("o site retorna a ordem completa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
