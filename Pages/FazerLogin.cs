@@ -1,9 +1,4 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProvaAutomacao.Pages
 {
@@ -20,10 +15,6 @@ namespace ProvaAutomacao.Pages
         {
             return driver.FindElement(By.ClassName("login"));
         }
-        public void acessarTelaLogin()
-        {
-            singIn().Click();
-        }
 
         private IWebElement campoEmail()
         {
@@ -38,6 +29,11 @@ namespace ProvaAutomacao.Pages
         {
             return driver.FindElement(By.Id("SubmitLogin"));
         }
+        public void acessarTelaLogin()
+        {
+            singIn().Click();
+        }
+        
         public void informarEmail(string email)
         {
             campoEmail().SendKeys(email);
