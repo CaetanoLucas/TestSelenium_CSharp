@@ -1,6 +1,4 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using System;
 
 
 namespace ProvaAutomacao.Pages
@@ -27,28 +25,6 @@ namespace ProvaAutomacao.Pages
         {
             campoPesquisa().SendKeys(item);
             botaoPesquisar().Click();
-        }
-
-        private WebDriverWait esperar()
-        {
-            return new WebDriverWait(driver, TimeSpan.FromSeconds(30));
-        }
-
-        private By contadorDeProduto()
-        {
-            return By.ClassName("product-count");
-        }
-
-        public Boolean validarResultadoDaPesquisa()
-        {
-            if (esperar().Until(ExpectedConditions.ElementIsVisible(contadorDeProduto())).Displayed)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
         }
     }
 }

@@ -2,7 +2,6 @@
 using OpenQA.Selenium;
 using ProvaAutomacao.Pages;
 using ProvaAutomacao.Util;
-using System;
 using TechTalk.SpecFlow;
 
 namespace ProvaAutomacao.Steps
@@ -48,11 +47,13 @@ namespace ProvaAutomacao.Steps
         [When(@"adicionar este produto no carrinho")]
         public void QuandoAdicionarEsteProdutoNoCarrinho()
         {
-            if (aguardar.AguardarElementoVisivel(addProduto.detalheProdutoWait(), driver)) ;
-            addProduto.verificarDetalhes();
+            if (aguardar.AguardarElementoVisivel(addProduto.detalheProdutoWait(), driver))
+                addProduto.verificarDetalhes();
+            
             addProduto.adicionarProduto();
-            if (aguardar.AguardarElementoVisivel(addProduto.fecharJanelaWait(), driver)) ;
-            addProduto.prosseguir();
+            
+            if (aguardar.AguardarElementoVisivel(addProduto.fecharJanelaWait(), driver))
+                addProduto.prosseguir();
         }
 
         [When(@"efetuar login")]
