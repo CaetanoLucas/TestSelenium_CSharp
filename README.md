@@ -2,7 +2,7 @@
 
 |    Recurso    | Versão |
 | ------------- | ------ |
-| Visual Studio |  2019  |
+| Visual Studio |   2019 |
 
 
 # Execução de testes.
